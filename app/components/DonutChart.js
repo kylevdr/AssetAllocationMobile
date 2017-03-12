@@ -44,9 +44,9 @@ class DonutChart extends React.Component {
           },
           label: {
             fontFamily: 'Arial',
-            fontSize: 8,
+            fontSize: 12,
             fontWeight: true,
-            color: '#ECF0F1'
+            color: '#333333'
           }
         }
 
