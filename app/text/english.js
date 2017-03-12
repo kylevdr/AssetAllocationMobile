@@ -1,15 +1,15 @@
 module.exports = {
 	title: "Asset Allocation Planner",
-	sliderInstructions: "Select a risk profile from 1 to 10:",
+	sliderInstructions: "To begin, select a risk profile from 1 to 10:",
 	riskProfileLabel: "Currently selected:",
-	chartTitle: "Ideal Asset Allocation",
+	chartTitle: "Your ideal asset allocation based on risk profile:",
 	seriesName: "Percentage Allocation",
 	largeCap: "Large Cap Stocks",
 	midSmallCap: "Mid/Small Cap Stocks",
 	international: "International Stocks",
 	bonds: "Bonds",
 	cash: "Cash",
-	formTitle: "Current Asset Allocation",
+	formTitle: "Enter your current asset allocation in the fields below:",
 	currency: "$",
 	conservative: "Conservative",
 	aggressive: "Aggressive",
@@ -18,6 +18,12 @@ module.exports = {
 	move: "Move",
 	from: "from",
 	to: "to",
-	nextStepsInstructions: "Enter your current allocation of assets in the field above.",
-	noStepsText: "You have already achieved ideal allocation of assets. You do not need to take any additional steps."
+	nextStepsInstructions: "Enter your current allocation of assets on the previous page.",
+	noStepsText: "You have already achieved ideal allocation of assets. You do not need to take any additional steps.",
+	sliderScreenTitle: "Asset Allocation Planner",
+	chartScreenTitle: "Ideal Allocation",
+	inputScreenTitle: "Current Allocation",
+	stepsScreenTitle: "Next Steps",
+	backButtonText: "Back",
+	appInstructions: "This app will determine the your ideal allocation of assets based on the risk profile you choose. It will then determine the appropriate steps for you to take based off your current allocation of assets."
 };

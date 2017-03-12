@@ -33,7 +33,7 @@ class DonutChart extends React.Component {
           },
           width: 350,
           height: 350,
-          color: '#2980B9',
+          color: colors.default,
           r: 50,
           R: 150,
           legendPosition: 'topLeft',

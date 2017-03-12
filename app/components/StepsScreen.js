@@ -9,7 +9,10 @@ import globalStyles from '../styles/globalStyles';
 
 class StepsScreen extends React.Component {
   static navigationOptions = {
-      title: 'Next Steps',
+      title: text.stepsScreenTitle,
+      header: {
+        backTitle: text.backButtonText
+      }
   };
 
   // Calculate steps when component mounts
@@ -21,18 +24,18 @@ class StepsScreen extends React.Component {
   renderSteps() {
     if (this.props.userInfo.total === 0) {
       return(
-        <Text>{text.nextStepsInstructions}</Text>
+        <Text style={globalStyles.centerText}>{text.nextStepsInstructions}</Text>
       );
     } else if (this.props.moves.moves.length > 0) {
       return(
         <View>
-          <Text>{text.nextStepsSub}</Text>
+          <Text style={globalStyles.centerText}>{text.nextStepsSub}</Text>
           {this.renderMoves.bind(this)()}
         </View>
       );
     } else {
       return(
-        <Text>{text.noStepsText}</Text>
+        <Text style={globalStyles.centerText}>{text.noStepsText}</Text>
       );
     }
   }
@@ -41,7 +44,7 @@ class StepsScreen extends React.Component {
   renderMoves() {
     return this.props.moves.moves.map((item, index) => {
       return (
-        <Text key={index}>{index + 1}. {item}</Text>
+        <Text style={globalStyles.centerText} key={index}>{index + 1}. {item}</Text>
       );
     })
   }
@@ -50,7 +53,6 @@ class StepsScreen extends React.Component {
   render() {
     return (
       <View style={globalStyles.container}>
-        <Text>{text.nextSteps}</Text>
         {this.renderSteps.bind(this)()}
       </View>
     );

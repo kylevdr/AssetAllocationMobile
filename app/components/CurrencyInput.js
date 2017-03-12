@@ -1,9 +1,10 @@
 import React from 'react';
-import { TextInput } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as userInfoActions from '../actions/userInfo';
+import text from '../text/text';
 
 class CurrencyInput extends React.Component {
   
@@ -14,15 +15,18 @@ class CurrencyInput extends React.Component {
 
   render() {
     return (
-      <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-        onChangeText={this.handleChange.bind(this)}
-        keyboardType="numeric"
-        autoCorrect={false}
-        placeholder={this.props.placeholder}
-        returnKeyType="done"
-        autoCapitalize="none"
-      />
+      <View>
+        <Text>{text.currency}</Text>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={this.handleChange.bind(this)}
+          keyboardType="numeric"
+          autoCorrect={false}
+          placeholder={this.props.placeholder}
+          returnKeyType="done"
+          autoCapitalize="none"
+        />
+      </View>
     );
   }
 }

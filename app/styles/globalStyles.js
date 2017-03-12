@@ -4,12 +4,16 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    // backgroundColor: '#F5FCFF',
   },
-  text: {
+  centerText: {
     textAlign: 'center',
-    color: '#333333',
-    marginTop: 5,
-    marginBottom: 5
+    color: '#333333'
   },
+  flexOne: {
+    flex: 1,
+  },
+  flexNine: {
+    flex: 9,
+    justifyContent: 'center'
+  }
 });

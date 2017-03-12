@@ -8,28 +8,34 @@ import CurrencyInput from './CurrencyInput';
 import globalStyles from '../styles/globalStyles';
 
 class InputScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Input',
-    };
-    render() {
-        const { navigate } = this.props.navigation;
-        // ScrollView with scroll disabled allows user to dismiss keyboard by tapping outside
-        return (
-            <View style={globalStyles.container}>
-                <Text>{text.title}</Text>
-                <CurrencyInput category="largeCap" placeholder={text.largeCap} />
-                <CurrencyInput category="midSmallCap" placeholder={text.midSmallCap} />
-                <CurrencyInput category="international" placeholder={text.international} />
-                <CurrencyInput category="bonds" placeholder={text.bonds} />
-                <CurrencyInput category="cash" placeholder={text.cash} />
-                <Button
-                  onPress={() => navigate('Steps')}
-                  title="Next"
-                />
-                <KeyboardSpacer />
-            </View>
-        );
-    }
+  static navigationOptions = {
+      title: text.inputScreenTitle,
+      header: {
+        backTitle: text.backButtonText
+      }
+  };
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View style={globalStyles.container}>
+        <View style={globalStyles.flexNine}>
+          <Text style={globalStyles.centerText}>{text.formTitle}</Text>
+          <CurrencyInput category="largeCap" placeholder={text.largeCap} />
+          <CurrencyInput category="midSmallCap" placeholder={text.midSmallCap} />
+          <CurrencyInput category="international" placeholder={text.international} />
+          <CurrencyInput category="bonds" placeholder={text.bonds} />
+          <CurrencyInput category="cash" placeholder={text.cash} />
+        </View>
+        <View style={globalStyles.flexOne}>
+          <Button
+            onPress={() => navigate('Steps')}
+            title="Next"
+          />
+        </View>
+        <KeyboardSpacer />
+      </View>
+    );
+  }
 }
 
 function mapStateToProps(state) {
