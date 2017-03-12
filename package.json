@@ -7,8 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "highcharts": "^5.0.9",
     "react": "~15.4.1",
     "react-native": "0.42.0",
+    "react-native-highcharts": "^0.2.0",
+    "react-navigation": "^1.0.0-beta.7",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0"
   },
