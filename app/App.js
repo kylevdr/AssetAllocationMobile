@@ -13,7 +13,7 @@ import StepsScreen from './components/StepsScreen';
 const store = createStore(rootReducer);
 
 const Navigation = StackNavigator({
-    Home: { screen: SliderScreen },
+    Slider: { screen: SliderScreen },
     Chart: { screen: ChartScreen },
     Input: { screen: InputScreen },
     Steps: { screen: StepsScreen }

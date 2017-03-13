@@ -8,19 +8,19 @@ import colors from '../styles/chartColors';
 class DonutChart extends React.Component {
     render() {
         let data = [{
-          "name": text.largeCap,
+          "name": text.largeCapLabel,
           [text.seriesName]: this.props.assetAllocation.largeCap
         }, {
-          "name": text.midSmallCap,
+          "name": text.midSmallCapLabel,
           [text.seriesName]: this.props.assetAllocation.midSmallCap
         }, {
-          "name": text.international,
+          "name": text.internationalLabel,
           [text.seriesName]: this.props.assetAllocation.international
         }, {
-          "name": text.bonds,
+          "name": text.bondsLabel,
           [text.seriesName]: this.props.assetAllocation.bonds
         }, {
-          "name": text.cash,
+          "name": text.cashLabel,
           [text.seriesName]: this.props.assetAllocation.cash
         }]
 
@@ -33,7 +33,7 @@ class DonutChart extends React.Component {
           },
           width: 350,
           height: 350,
-          color: '#2980B9',
+          color: colors.default,
           r: 50,
           R: 150,
           legendPosition: 'topLeft',
