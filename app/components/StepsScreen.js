@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 import * as movesActions from '../actions/moves';
 import text from '../text/text';
 import globalStyles from '../styles/globalStyles';
+
+// Create stateless component that functions as <b> or <strong> tag
+const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 class StepsScreen extends React.Component {
   static navigationOptions = {
@@ -24,18 +27,18 @@ class StepsScreen extends React.Component {
   renderSteps() {
     if (this.props.userInfo.total === 0) {
       return(
-        <Text style={globalStyles.centerText}>{text.nextStepsInstructions}</Text>
+        <Text style={styles.text}><B>{text.nextStepsInstructions}</B></Text>
       );
     } else if (this.props.moves.moves.length > 0) {
       return(
         <View>
-          <Text style={globalStyles.centerText}>{text.nextStepsSub}</Text>
+          <Text style={styles.nextStepsSub}><B>{text.nextStepsSub}</B></Text>
           {this.renderMoves.bind(this)()}
         </View>
       );
     } else {
       return(
-        <Text style={globalStyles.centerText}>{text.noStepsText}</Text>
+        <Text style={styles.text}><B>{text.noStepsText}</B></Text>
       );
     }
   }
@@ -44,7 +47,7 @@ class StepsScreen extends React.Component {
   renderMoves() {
     return this.props.moves.moves.map((item, index) => {
       return (
-        <Text style={globalStyles.centerText} key={index}>{index + 1}. {item}</Text>
+        <Text style={styles.move} key={index}><B style={{fontWeight: 'bold'}}>{index + 1}.</B> {item}</Text>
       );
     })
   }
@@ -54,10 +57,31 @@ class StepsScreen extends React.Component {
     return (
       <View style={globalStyles.container}>
         {this.renderSteps.bind(this)()}
+        <View />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  text: {
+    marginLeft: 20,
+    marginRight: 20,
+    color: '#333333'
+  },
+  move: {
+    marginLeft: 20,
+    marginRight: 20,
+    color: '#333333',
+    marginBottom: 5
+  },
+  nextStepsSub: {
+    marginLeft: 20,
+    marginRight: 20,
+    color: '#333333',
+    marginBottom: 10
+  }
+});
 
 function mapStateToProps(state) {
   return {

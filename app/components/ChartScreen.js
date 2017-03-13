@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { View, Text, Button } from 'react-native';
 
 import text from '../text/text';
 import DonutChart from './DonutChart';
 import globalStyles from '../styles/globalStyles';
+import CategoryAllocationText from './CategoryAllocationText';
 
-class ChartScreen extends React.Component {
+export default class ChartScreen extends React.Component {
     static navigationOptions = {
         title: text.chartScreenTitle,
         header: {
@@ -20,6 +20,11 @@ class ChartScreen extends React.Component {
               <View style={globalStyles.flexNine}>
                 <Text style={globalStyles.centerText}>{text.chartTitle}</Text>
                 <DonutChart />
+                <CategoryAllocationText category="largeCap" />
+                <CategoryAllocationText category="midSmallCap" />
+                <CategoryAllocationText category="international" />
+                <CategoryAllocationText category="bonds" />
+                <CategoryAllocationText category="cash" />
               </View>
               <View style={globalStyles.flexOne}>
                 <Button
@@ -31,13 +36,3 @@ class ChartScreen extends React.Component {
         );
     }
 }
-
-function mapStateToProps(state) {
-  return {
-    userInfo: state.userInfo
-  };
-}
-
-export default connect(
-  mapStateToProps
-)(ChartScreen);

@@ -25,21 +25,30 @@ class SliderScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <View style={globalStyles.flexNine}>
-          <Text style={styles.text}>{text.sliderInstructions}</Text>
-          <View style={styles.row}>
-            <View style={styles.spacer} />
-            <Slider
-              style={styles.slider}
-              minimumValue={1}
-              maximumValue={10}
-              value={this.props.userInfo.riskProfile}
-              step={1}
-              onSlidingComplete={this.handleSliderChange.bind(this)}
-            />
-            <View style={styles.spacer} />
+        <View style={{flex: 9, justifyContent: 'space-around'}}>
+          <View style={{flex: 1}} />
+          <View style={{flex: 4}}>
+            <Text style={styles.title}>{text.titlePartOne}</Text>
+            <Text style={styles.title}>{text.titlePartTwo}</Text>
+            <Text style={styles.title}>{text.titlePartThree}</Text>
           </View>
-          <Text style={styles.text}>{text.riskProfileLabel} {this.props.userInfo.riskProfile}</Text>
+          <View style={{flex: 3}}>
+            <Text style={styles.text}>{text.sliderInstructions}</Text>
+            <View style={styles.row}>
+              <View style={styles.spacer} />
+              <Slider
+                style={styles.slider}
+                minimumValue={1}
+                maximumValue={10}
+                value={this.props.userInfo.riskProfile}
+                step={1}
+                onSlidingComplete={this.handleSliderChange.bind(this)}
+              />
+              <View style={styles.spacer} />
+            </View>
+            <Text style={styles.text}>{text.riskProfileLabel} {this.props.userInfo.riskProfile}</Text>
+          </View>
+          <View style={{flex: 2}} />
         </View>
         <View style={globalStyles.flexOne}>
           <Button
@@ -56,7 +65,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-around',
-    // backgroundColor: '#F5FCFF',
   },
   text: {
     textAlign: 'center',
@@ -72,6 +80,11 @@ const styles = StyleSheet.create({
   },
   slider: {
     flex: 8
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 44,
+    fontWeight: '400'
   }
 });
 
